@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocialMedia.FeedDetailPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="CommentsList" HasUnevenRows="True" BackgroundColor="Transparent">
+                <ListView.Header>
+                    <StackLayout>
+                        <Grid BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="5*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+                                <Grid Padding="20,10,20,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image x:Name="UserProfile" Grid.Column="0" Grid.Row="0" WidthRequest="30" HeightRequest="30"></Image>
+                                    <Label x:Name="Username" Grid.Column="1" Grid.Row="0" FontSize="Micro" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                                    <Label x:Name="PostedDateString" Grid.Column="2" Grid.Row="0" FontSize="Micro" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="End"></Label>
+                                </Grid>
+                            </StackLayout>
+                            <Image x:Name="Image" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Aspect="Fill"></Image>
+                            <Label x:Name="Caption" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Margin="20,0,20,0"></Label>
+                            <StackLayout Grid.Column="0" Grid.Row="3">
+                                <Grid VerticalOptions="CenterAndExpand" Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" Grid.Row="0" Source="heart" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"></Image>
+                                    <Label x:Name="Likes" Grid.Column="1" Grid.Row="0" FontSize="Micro" TextColor="Black" VerticalTextAlignment="Center"></Label>
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Grid.Row="3">
+                                <Grid VerticalOptions="CenterAndExpand" Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0" Grid.Row="0" Source="comments" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"></Image>
+                                    <Label x:Name="Comments" Grid.Column="1" Grid.Row="0" FontSize="Micro" TextColor="Black" VerticalOptions="Center"></Label>
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
+                        <StackLayout HeightRequest="1" BackgroundColor="#BDBDBD"></StackLayout>
+                        <StackLayout>
+                            <Grid Margin="20,0,20,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Grid.Row="0" x:Name="CommentsLabel" Text="Comments:" FontSize="Small"></Label>
+                                <Label Grid.Column="1" Grid.Row="0" Text="See all" FontSize="Small" TextColor="DeepSkyBlue" HorizontalTextAlignment="End" HorizontalOptions="End"></Label>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Column="0" Grid.Row="0">
+                                    <Grid Padding="20,0,20,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="100"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Grid.Row="0" Source="{Binding UserProfile}" WidthRequest="30" HeightRequest="30"></Image>
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Username}" FontSize="Micro" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                                        <Label Grid.Column="2" Grid.Row="0" Text="{Binding PostedDateString}" FontSize="Micro" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="End"></Label>
+                                    </Grid>
+                                </StackLayout>
+                                <Label Grid.Column="0" Grid.Row="1" Text="{Binding Comment}" Margin="20,0,20,10"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <StackLayout Margin="20,10,20,10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Entry Grid.Column="0" Grid.Row="0" Placeholder="Write Comment..." FontSize="Small"></Entry>
+                            <StackLayout Grid.Column="1" Grid.Row="0" HeightRequest="50" WidthRequest="50" BackgroundColor="DeepSkyBlue">
+                                <Image Source="paperplane" HeightRequest="35" WidthRequest="35" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

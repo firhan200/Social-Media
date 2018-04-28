@@ -21,6 +21,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Constants\MenuLinks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FeedDetailPage.xaml.cs">
+      <DependentUpon>FeedDetailPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)FeedsPage.xaml.cs">
       <DependentUpon>FeedsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -40,6 +44,7 @@
       <DependentUpon>MenuPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CommentModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\FeedModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MenuModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SignUpPage.xaml.cs">
@@ -81,6 +86,12 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ActivitiesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FeedDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

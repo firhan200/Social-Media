@@ -17,7 +17,13 @@ namespace SocialMedia
 		{
 			InitializeComponent ();
             PopulateFeeds();
+            FeedList.ItemTapped += FeedList_ItemTapped;
+        }
 
+        private async void FeedList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var feed = e.Item as FeedModel;
+            await Navigation.PushAsync(new FeedDetailPage(feed));
         }
 
         private async void PopulateFeeds()
