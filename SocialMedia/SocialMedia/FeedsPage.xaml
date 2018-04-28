@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocialMedia.FeedsPage"
+             Icon="list"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="FeedList" HasUnevenRows="True" BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*" />
+                                    <ColumnDefinition Width="5*" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+                                    <Grid Padding="20,10,20,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="100"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Grid.Row="0" Source="{Binding UserProfile}" WidthRequest="30" HeightRequest="30"></Image>
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Username}" FontSize="Micro" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                                        <Label Grid.Column="2" Grid.Row="0" Text="{Binding PostedDateString}" FontSize="Micro" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="End"></Label>
+                                    </Grid>
+                                </StackLayout>
+                                <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Source="{Binding Image}" Aspect="Fill"></Image>
+                                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Text="{Binding Caption}" TextColor="{Binding Color}" Margin="20,0,20,0"></Label>
+                                <StackLayout Grid.Column="0" Grid.Row="3">
+                                    <Grid VerticalOptions="CenterAndExpand" Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Grid.Row="0" Source="heart" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"></Image>
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Likes}" FontSize="Micro" TextColor="Black" VerticalTextAlignment="Center"></Label>
+                                    </Grid>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Grid.Row="3">
+                                    <Grid VerticalOptions="CenterAndExpand" Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Grid.Row="0" Source="comments" HeightRequest="20" WidthRequest="20" HorizontalOptions="EndAndExpand"></Image>
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Comments}" FontSize="Micro" TextColor="Black" VerticalOptions="Center"></Label>
+                                    </Grid>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocialMedia.SignUpPage"
+             Title="Sign Up"
+             BackgroundColor="#2B3242">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20" Spacing="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0" Source="user" WidthRequest="20" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                <Entry x:Name="Username" Grid.Row="0" Grid.Column="1" Placeholder="Username" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" HeightRequest="50" FontSize="Small"></Entry>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0" Source="envelope" WidthRequest="20" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                <Entry x:Name="Email" Grid.Row="0" Grid.Column="1" Placeholder="E-mal" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" HeightRequest="50" FontSize="Small"></Entry>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0" Source="lock" WidthRequest="20" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                <Entry x:Name="Password" Grid.Row="0" Grid.Column="1" Placeholder="Password" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" HeightRequest="50" FontSize="Small" IsPassword="True"></Entry>
+            </Grid>
+            <Button Text="Sign me up" HeightRequest="60" BorderRadius="0" BackgroundColor="#3989C8" TextColor="White"></Button>
+            <Label Text="Back to Login" HorizontalTextAlignment="Center" TextColor="#B9B9B9">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GotoLoginPage"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

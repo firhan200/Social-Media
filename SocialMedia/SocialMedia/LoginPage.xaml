@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocialMedia.LoginPage"
+             Title="Login"
+             BackgroundColor="#2B3242">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20" Spacing="20">
+            <Image Source="icon" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" Margin="0,0,0,40"></Image>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0" Source="envelope" WidthRequest="20" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                <Entry x:Name="Username" Grid.Row="0" Grid.Column="1" Placeholder="Username" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" HeightRequest="50" FontSize="Small"></Entry>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0" Source="lock" WidthRequest="20" HeightRequest="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                <Entry x:Name="Password" Grid.Row="0" Grid.Column="1" Placeholder="Password" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" HeightRequest="50" FontSize="Small" IsPassword="True"></Entry>
+            </Grid>
+            <Label Text="Forgot Password?" HorizontalTextAlignment="End" TextColor="#B9B9B9"></Label>
+            <StackLayout HeightRequest="50">
+                <Button x:Name="LoginBtn" Text="Log in" HeightRequest="60" BorderRadius="0" BackgroundColor="#3989C8" TextColor="White" Clicked="Login"></Button>
+                <ActivityIndicator x:Name="Loader" Color="White" HeightRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsRunning="True" IsVisible="False"></ActivityIndicator>
+            </StackLayout>
+            <Label Text="Not have an account? Sign up" HorizontalTextAlignment="Center" TextColor="#B9B9B9">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GotoSignUpPage"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
