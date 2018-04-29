@@ -2,12 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SocialMedia.ActivitiesPage"
-             Icon="activities">
+             Icon="activities"
+             BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Activities"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="ActivityList" HasUnevenRows="True" BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White" Padding="20,10,20,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Column="0" Grid.Row="0" Source="{Binding UserProfile}" WidthRequest="30" HeightRequest="30"></Image>
+                                <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Username}" FontSize="Micro" TextColor="Black" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding Action}" FontSize="Micro" TextColor="Black"></Label>
+                                    <Label Text="{Binding ActionObject}" FontSize="Micro" TextColor="Black"></Label>
+                                    <Label Text="{Binding PostedDateString}" FontSize="Micro" TextColor="#BDBDBD"></Label>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

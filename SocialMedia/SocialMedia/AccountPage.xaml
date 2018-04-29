@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocialMedia.AccountPage"
+             Title="My Account"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Grid Padding="20,10,20,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" x:Name="UserProfile" WidthRequest="80" HeightRequest="80"></Image>
+                    <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3.3*"></ColumnDefinition>
+                                <ColumnDefinition Width="3.3*"></ColumnDefinition>
+                                <ColumnDefinition Width="3.3*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Grid.Row="0">
+                                <Label x:Name="Posts" TextColor="Black" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="posts" TextColor="Gray" Margin="0,-5,0,0" FontSize="Small" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Grid.Row="0">
+                                <Label x:Name="Followers" TextColor="Black" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="followers" TextColor="Gray" Margin="0,-5,0,0" FontSize="Small" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Grid.Row="0">
+                                <Label x:Name="Following" TextColor="Black" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="following" TextColor="Gray" Margin="0,-5,0,0" FontSize="Small" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+                        <Label x:Name="Username" Text="Firhan" FontSize="Small" TextColor="Black"></Label>
+                        <Label x:Name="Bio" Text="https://firhan200.github.io" FontSize="Small" TextColor="#696969" Margin="0,-5,0,0"></Label>
+                    </StackLayout>
+                </Grid>
+                <StackLayout HeightRequest="1" BackgroundColor="#E6E6E6" HorizontalOptions="FillAndExpand"></StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="feeds" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                    <Image Grid.Column="1" Grid.Row="0" Source="list" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                </Grid>
+                <StackLayout HeightRequest="1" BackgroundColor="#E6E6E6" HorizontalOptions="FillAndExpand"></StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

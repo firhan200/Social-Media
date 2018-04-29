@@ -31,7 +31,7 @@ namespace SocialMedia
             PopulateComments();
         }
 
-        private async void PopulateComments()
+        private void PopulateComments()
         {
             var comments = new List<CommentModel>();
             comments.Add(new CommentModel

@@ -26,7 +26,7 @@ namespace SocialMedia
             await Navigation.PushAsync(new FeedDetailPage(feed));
         }
 
-        private async void PopulateFeeds()
+        private void PopulateFeeds()
         {
             var feeds = new List<FeedModel>();
             feeds.Add(new FeedModel
@@ -41,7 +41,7 @@ namespace SocialMedia
             });
             feeds.Add(new FeedModel
             {
-                Username = "Firhan",
+                Username = "Tom",
                 UserProfile = ImageSource.FromFile("sample"),
                 PostedDateString = "45 minutes ago",
                 Caption = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",

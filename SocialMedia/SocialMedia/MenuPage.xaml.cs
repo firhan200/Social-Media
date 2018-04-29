@@ -14,7 +14,9 @@ namespace SocialMedia
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MenuPage : ContentPage
 	{
-		public MenuPage ()
+        public ListView ListView { get { return MenuList; } }
+
+        public MenuPage ()
 		{
 			InitializeComponent ();
             PopulateMenus();

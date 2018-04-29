@@ -31,7 +31,7 @@ namespace SocialMedia
                 string username = Username.Text;
                 string password = Password.Text;
 
-                await Task.Delay(2);
+                await Task.Delay(1000);
 
                 Application.Current.MainPage = new MasterDetail();
             }
