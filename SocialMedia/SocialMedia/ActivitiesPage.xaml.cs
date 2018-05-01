@@ -18,10 +18,13 @@ namespace SocialMedia
 			InitializeComponent ();
             PopulateActivities();
 
+            ActivityList.RefreshCommand = new Command(PopulateActivities);
         }
 
-        private async void PopulateActivities()
+        private void PopulateActivities()
         {
+            ActivityList.IsRefreshing = true;
+
             var activities = new List<ActivityModel>();
             activities.Add(new ActivityModel
             {
@@ -49,6 +52,7 @@ namespace SocialMedia
             });
 
             ActivityList.ItemsSource = activities;
+            ActivityList.IsRefreshing = false;
         }
     }
 }

@@ -6,7 +6,7 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="FeedList" HasUnevenRows="True" BackgroundColor="Transparent">
+            <ListView x:Name="FeedList" HasUnevenRows="True" BackgroundColor="Transparent" IsPullToRefreshEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

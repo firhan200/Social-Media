@@ -23,7 +23,7 @@ namespace SocialMedia
 
         }
 
-        public async void PopulateMenus()
+        public void PopulateMenus()
         {
             var textColor = Color.FromHex("#078cd6");
             var menus = new List<MenuModel>();

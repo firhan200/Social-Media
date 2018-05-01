@@ -18,6 +18,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Image Grid.Column="0" Grid.Row="0" x:Name="UserProfile" WidthRequest="80" HeightRequest="80"></Image>
+                    <Image Grid.Column="0" Grid.Row="0" Source="gearbg" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"></Image>
                     <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -42,6 +43,7 @@
                                 <Label Text="following" TextColor="Gray" Margin="0,-5,0,0" FontSize="Small" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
                         </Grid>
+                        <Button Text="Edit Profile" BackgroundColor="WhiteSmoke" HeightRequest="40"></Button>
                     </StackLayout>
                     <StackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
                         <Label x:Name="Username" Text="Firhan" FontSize="Small" TextColor="Black"></Label>
@@ -58,8 +60,8 @@
                         <ColumnDefinition Width="5*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Image Grid.Column="0" Grid.Row="0" Source="feeds" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
-                    <Image Grid.Column="1" Grid.Row="0" Source="list" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                    <Image Grid.Column="0" Grid.Row="0" Source="feeds" HeightRequest="30" WidthRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                    <Image Grid.Column="1" Grid.Row="0" Source="listdot" HeightRequest="30" WidthRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
                 </Grid>
                 <StackLayout HeightRequest="1" BackgroundColor="#E6E6E6" HorizontalOptions="FillAndExpand"></StackLayout>
             </StackLayout>

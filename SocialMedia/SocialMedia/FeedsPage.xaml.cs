@@ -18,6 +18,7 @@ namespace SocialMedia
 			InitializeComponent ();
             PopulateFeeds();
             FeedList.ItemTapped += FeedList_ItemTapped;
+            FeedList.RefreshCommand = new Command(PopulateFeeds);
         }
 
         private async void FeedList_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -28,6 +29,8 @@ namespace SocialMedia
 
         private void PopulateFeeds()
         {
+            FeedList.IsRefreshing = true;
+
             var feeds = new List<FeedModel>();
             feeds.Add(new FeedModel
             {
@@ -51,6 +54,7 @@ namespace SocialMedia
             });
 
             FeedList.ItemsSource = feeds;
+            FeedList.IsRefreshing = false;
         }
 	}
 }

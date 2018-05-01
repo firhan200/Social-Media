@@ -40,7 +40,11 @@ namespace SocialMedia
             {
                 //current user account
                 Detail = new NavigationPage(new AccountPage(null));
-            }           
+            }
+            else if (menu == MenuLinks.Logout)
+            {
+                Application.Current.MainPage = new NavigationPage(new LoginPage());
+            }
         }
     }
 }
